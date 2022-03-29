@@ -1,0 +1,3 @@
+[submodule "IRS"]
+	path = IRS
+	url = https://github.com/HKBU-HPML/IRS.git
