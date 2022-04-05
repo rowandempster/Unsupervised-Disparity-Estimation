@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  dev:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+    image: git.uwaterloo.ca:5050/watonomous/registry/misc/rowan-ml-assignments
+    tty: true
+    volumes:
+      - ./src:/project
+      - /mnt/wato-drive/rowan:/data
+    shm_size: '20gb'
