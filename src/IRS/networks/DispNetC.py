@@ -7,7 +7,7 @@ from torch.autograd import Function
 from torch.nn import init
 from torch.nn.init import kaiming_normal
 #from correlation_package.modules.corr import Correlation1d # from PWC-Net
-from networks.submodules import *
+from IRS.networks.submodules import *
 
 class DispNetC(nn.Module):
 
