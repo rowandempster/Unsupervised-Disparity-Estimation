@@ -130,7 +130,8 @@ class IRSDataset(Dataset):
         elif self.phase == 'visualize':
             rgb_transform = transforms.ToTensor()
         else:
-            rgb_transform = inception_color_preproccess()
+            # rgb_transform = inception_color_preproccess()
+            rgb_transform = default_transform()
         img_left = rgb_transform(img_left)
         img_right = rgb_transform(img_right)
 
