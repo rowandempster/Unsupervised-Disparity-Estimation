@@ -1,13 +1,14 @@
 
 from __future__ import print_function
-from typing import Optional, List
+
+from typing import List, Optional
 
 import torch
 import torch.nn as nn
-
 import torchvision.models as models
 
 from mylibs.reconstruction import estimate_left
+
 
 class PerceptualLoss(nn.Module):
     L1 = 4
@@ -47,7 +48,7 @@ class PerceptualLoss(nn.Module):
         est, gt: [N, C(3), H, W]
         '''
         if self.agg_prod:
-            return torch.prod(self._compute_l1_diff(est, gt), dim=1).mean()
+            return torch.prod(self._compute_l1_diff(est, gt), dim=1)
         else:
             return sum([diff.mean() for diff in self._compute_l1_diff(est, gt)])
 
